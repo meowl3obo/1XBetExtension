@@ -1,0 +1,37 @@
+{
+    "manifest_version": 2,
+    "name": "ZB Get 1XBet Html",
+    "description": "ZB Get 1XBet Html",
+    "version": "0.2.2",
+    "homepage_url": "https://ls.zbdigital.net/",
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+    "icons": {
+        "16": "icons/1xBetIcon.png",
+        "48": "icons/1xBetIcon.png",
+        "128": "icons/1xBetIcon.png"
+    },
+    "browser_action": {
+        "default_icon": "icons/1xBetIcon.png"
+    },
+    "background": {
+        "scripts": [
+            "jquery-3.1.0.min.js",
+            "config.js",
+            "background.js"
+        ]
+    },
+    "content_scripts": [{
+        "matches": [
+            "https://1xbet.com/*"
+        ],
+        "all_frames": true,
+        "js": [
+            "content.js"
+        ]
+    }],
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "browsingData"
+    ]
+}
